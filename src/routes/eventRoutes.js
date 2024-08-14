@@ -1,15 +1,15 @@
 import { Router } from "express"
 
 //importar controllers
-import {registerLecturer, getAllLecturers} from '../controllers/lecturerControllers.js'
+import {createEvent, getSchedule, subscribeParticipant} from '../controllers/eventControllers.js'
 //importar helpers
-import {validateLecturer} from '../helpers/index.js'
+import {validateEvent} from '../helpers/index.js'
 
 const router = Router()
 
 //rotas
-
-router.post('/palestrantes', validateLecturer, registerLecturer)
-router.get('/palestrantes', getAllLecturers)
+router.post('/criar', validateEvent, createEvent) //cria novo evento
+router.get('/agenda', getSchedule) //lista todos os eventos
+router.post('/inscrever', subscribeParticipant) //inscreve um participante em um evento
 
 export default router

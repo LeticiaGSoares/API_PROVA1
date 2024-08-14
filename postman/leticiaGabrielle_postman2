@@ -1,0 +1,170 @@
+{
+	"info": {
+		"_postman_id": "cc1e1c48-dc47-47f6-b298-0d057631e27f",
+		"name": "#1 Prova",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37199412"
+	},
+	"item": [
+		{
+			"name": "palestrantes",
+			"item": [
+				{
+					"name": "/eventos/palestrantes",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Nome do Palestrante\",\r\n    \"expertise\": \"Área de Especialização\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/eventos/palestrantes",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"eventos",
+								"palestrantes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/eventos/palestrantes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/eventos/palestrantes",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"eventos",
+								"palestrantes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "eventos",
+			"item": [
+				{
+					"name": "/eventos/criar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"titulo\": \"Título do Evento\",\r\n    \"data\": \"2024-08-15\",\r\n    \"palestrantesId\": [\r\n        1,\r\n        3\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/eventos/criar",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"eventos",
+								"criar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/eventos/agenda",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/eventos/agenda",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"eventos",
+								"agenda"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/eventos/inscrever",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"participanteId\": 2,\r\n    \"eventoId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/eventos/inscrever",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"eventos",
+								"inscrever"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "participantes",
+			"item": [
+				{
+					"name": "/eventos/participantes/registrar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Nome do Participante\",\r\n    \"email\": \"email@exemplo.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/eventos/participantes/registrar",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"eventos",
+								"participantes",
+								"registrar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -1,5 +1,4 @@
 import conn from '../config/conn.js'
-import {tableName as lecturerTable} from './lecturerModel.js'
 export const tableName = "participants"
 
 const tableParticipants = /*sql*/`

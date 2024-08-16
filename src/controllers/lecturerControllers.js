@@ -27,6 +27,12 @@ export const getAllLecturers = (req, res) => {
     `
 
     conn.query(checkLecturer, (err, data)=> {
+        if (err) {
+            return res.status(500).json({validationError: "Não foi possivel buscar palestrantes, error: " + err });
+        }else if (data.length == 0) {
+            return res.status(404).json({validationError: "Não existe nenhum palestrante no banco de dados"});
+        }
+
         res.status(200).json(data)
     })
     

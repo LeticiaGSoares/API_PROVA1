@@ -18,17 +18,16 @@ const validateEvent = (req, res, next) => {
         SELECT titulo from events
         WHERE ?? = ?
     `
+    
+    const checkEventSqlData = ["titulo", titulo]
 
-    const checkEmailSqlData = ["titulo", titulo]
-
-    conn.query(checkEventSql, checkEmailSqlData, (err, data)=>{
+    conn.query(checkEventSql, checkEventSqlData, async (err, data)=>{
         if (err) {
             return res.status(500).json({validationError: "Não foi possivel buscar eventos, error: " + err });
         }else if (data.length > 0) {
             return res.status(404).json({validationError: "Já existe um evento com esse título no banco de dados" });
         }
 
-        res.status(201).json({message: "Evento criado com sucesso", evento: req.body})
     })
 
     const checkLecturersSql = /*sql*/`
@@ -38,6 +37,7 @@ const validateEvent = (req, res, next) => {
     const checkLecturersSqlData = "lecturer_id"
 
     conn.query(checkLecturersSql, checkLecturersSqlData, async (err, data)=>{
+        
         if (err) {
             return res.status(500).json({validationError: "Não foi possivel buscar ID de palestrante, error: " + err });
         }else if (data.length == 0) {
@@ -54,11 +54,32 @@ const validateEvent = (req, res, next) => {
 
             if(!dataCheck){
                 return res.status(404).json({validateError: `${id} não existe no banco de dados`})
+            }else{
+                console.log("ID's de palestrantes OK")
             }
         })
+        next()
     })
 
-    next()
+    // palestrantesId.forEach(lecturer_id => {
+    //     const checkSql = /*sql*/`
+    //         SELECT * FROM lecturers
+    //         WHERE ?? = ?
+    //     `
+    //     const checkSqlData = ["lecturer_id", lecturer_id]
+
+    //     conn.query(checkSql, checkSqlData, (err, info) => {
+            
+    //         if (err) {
+    //             return res.status(500).json({validationError: "Não foi possivel buscar palestrantes, error: " + err });
+    //         }else if (info.length == 0) {
+    //             return res.status(404).json({validationError: `O palestrante de id ${lecturer_id} não existe no banco de dados`});
+    //         }
+    //     })
+        
+        
+    // })
+    
 }
 
 export default validateEvent

@@ -1,0 +1,288 @@
+{
+	"info": {
+		"_postman_id": "cc1e1c48-dc47-47f6-b298-0d057631e27f",
+		"name": "LETÍCIA GABRIELLE - API_PROVA1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37199412"
+	},
+	"item": [
+		{
+			"name": "palestrantes",
+			"item": [
+				{
+					"name": "/eventos/palestrantes",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Nome do Palestrante\",\r\n    \"expertise\": \"Área de Especialização\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/eventos/palestrantes",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"eventos",
+								"palestrantes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/eventos/palestrantes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/eventos/palestrantes",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"eventos",
+								"palestrantes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "eventos",
+			"item": [
+				{
+					"name": "/eventos/criar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"titulo\": \"Título do Evento\",\r\n    \"data\": \"2024-08-15\",\r\n    \"palestrantesId\": [\r\n        1,\r\n        3\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/eventos/criar",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"eventos",
+								"criar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/eventos/agenda",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/eventos/agenda",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"eventos",
+								"agenda"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/eventos/inscrever",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"participanteId\": 2,\r\n    \"eventoId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/eventos/inscrever",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"eventos",
+								"inscrever"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/eventos/palestrante-mais-ativo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/eventos/palestrante-mais-ativo",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"eventos",
+								"palestrante-mais-ativo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/eventos/editar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"eventoId\": 1,\r\n    \"titulo\": \"Novo Título\",\r\n    \"data\": \"2024-08-20\",\r\n    \"palestrantesId\": [\r\n        2\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/eventos/editar",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"eventos",
+								"editar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/eventos/cancelar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"eventoId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/eventos/cancelar",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"eventos",
+								"cancelar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "participantes",
+			"item": [
+				{
+					"name": "/eventos/participantes/registrar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Nome do Participante\",\r\n    \"email\": \"email@exemplo.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/eventos/participantes/registrar",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"eventos",
+								"participantes",
+								"registrar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/eventos/meus-eventos/:participanteId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/eventos/meus-eventos/f78fda28-9559-4b8e-9af1-720675487d4f",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"eventos",
+								"meus-eventos",
+								"f78fda28-9559-4b8e-9af1-720675487d4f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/eventos/feedback",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"participanteId\": 2,\r\n    \"eventoId\": 1,\r\n    \"nota\": 5,\r\n    \"comentario\": \"Excelente evento!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/eventos/feedback",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"eventos",
+								"feedback"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
